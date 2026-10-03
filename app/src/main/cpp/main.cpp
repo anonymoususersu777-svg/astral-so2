@@ -6,8 +6,10 @@
 
 #define LOG(...) __android_log_print(ANDROID_LOG_INFO,"ASTRAL",__VA_ARGS__)
 
-extern void renderESP(float, float);
-extern void runAimbot(float, float);
+extern "C" {
+    void renderESP(float, float);
+    void runAimbot(float, float);
+}
 
 extern bool g_espBoxes, g_espHealth, g_aimEnable;
 extern bool g_rageFastFire, g_rageInfAmmo, g_rageWallshot,
@@ -26,7 +28,8 @@ static void* renderLoop(void*) {
 extern "C" JNIEXPORT void JNICALL
 Java_com_astral_menu_NativeBridge_init(JNIEnv*, jclass, jint pid) {
     LOG("ASTRAL init pid=%d", pid);
-    pthread_t t; pthread_create(&t, nullptr, renderLoop, nullptr);
+    pthread_t t;
+    pthread_create(&t, nullptr, renderLoop, nullptr);
 }
 
 extern "C" JNIEXPORT void JNICALL

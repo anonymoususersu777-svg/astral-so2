@@ -5,7 +5,8 @@ bool  g_aimEnable = false;
 float g_aimFov    = 90.0f;
 float g_aimSmooth = 8.0f;
 
-void runAimbot(float W, float H) {
+extern "C" void runAimbot(float W, float H) {
+    (void)W; (void)H;
     if (!g_aimEnable) return;
     // target select + touch move
 }

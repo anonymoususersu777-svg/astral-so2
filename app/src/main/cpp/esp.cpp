@@ -14,7 +14,7 @@ struct Vec3 { float x, y, z; };
 bool g_espBoxes  = true;
 bool g_espHealth = true;
 
-bool worldToScreen(const Vec3& w, Vec3& s, float* m, float W, float H) {
+extern "C" bool worldToScreen(const Vec3& w, Vec3& s, float* m, float W, float H) {
     float cx = w.x*m[0] + w.y*m[4] + w.z*m[8]  + m[12];
     float cy = w.x*m[1] + w.y*m[5] + w.z*m[9]  + m[13];
     float cw = w.x*m[3] + w.y*m[7] + w.z*m[11] + m[15];
@@ -24,6 +24,7 @@ bool worldToScreen(const Vec3& w, Vec3& s, float* m, float W, float H) {
     return true;
 }
 
-void renderESP(float W, float H) {
+extern "C" void renderESP(float W, float H) {
+    (void)W; (void)H;
     // read game process memory via /proc/<pid>/mem with offsets above
 }
