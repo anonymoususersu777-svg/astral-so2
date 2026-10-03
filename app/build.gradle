@@ -1,0 +1,23 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'com.astral.menu'
+    compileSdk 34
+    defaultConfig {
+        applicationId "com.astral.menu"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+        externalNativeBuild { cmake { cppFlags "-std=c++17" } }
+        ndk { abiFilters 'arm64-v8a' }
+    }
+    externalNativeBuild { cmake { path "src/main/cpp/CMakeLists.txt" } }
+    buildTypes { release { minifyEnabled false } }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies { implementation 'androidx.appcompat:appcompat:1.6.1' }

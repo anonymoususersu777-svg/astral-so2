@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0A0A0A"
+    android:padding="24dp">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="28dp">
+        <ImageView android:layout_width="48dp" android:layout_height="48dp"
+            android:src="@drawable/astral_logo"/>
+        <TextView android:id="@+id/tgLink"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:layout_marginStart="12dp" android:text="t.me/astraldlc7"
+            android:textColor="#39FF14" android:textSize="22sp"
+            android:textStyle="bold" android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <TextView android:text="Functions" android:textColor="#FFFFFF"
+        android:textSize="18sp" android:textStyle="bold"
+        android:layout_marginBottom="12dp"/>
+
+    <TextView android:text="Set Sky Color" android:textColor="#39FF14"
+        android:textSize="15sp" android:layout_marginTop="8dp"/>
+    <EditText android:id="@+id/skyColor" android:text="#000000"
+        android:textColor="#FFFFFF" android:backgroundTint="#39FF14"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <TextView android:text="Aspect Ratio Value" android:textColor="#39FF14"
+        android:textSize="15sp" android:layout_marginTop="16dp"/>
+    <SeekBar android:id="@+id/aspectRatio" android:max="100"
+        android:progress="13" android:progressTint="#39FF14"
+        android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+    <CheckBox android:id="@+id/hitMarker" android:text="Hit Marker"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"
+        android:checked="true"/>
+
+    <TextView android:text="Rage" android:textColor="#FFFFFF"
+        android:textSize="18sp" android:textStyle="bold"
+        android:layout_marginTop="24dp" android:layout_marginBottom="12dp"/>
+
+    <CheckBox android:id="@+id/fastFire" android:text="Fast Fire"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"/>
+    <CheckBox android:id="@+id/infAmmo" android:text="Infinity Ammo"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"/>
+    <CheckBox android:id="@+id/wallshot" android:text="Wallshot"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"/>
+    <CheckBox android:id="@+id/noRecoil" android:text="No Recoil"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"/>
+    <CheckBox android:id="@+id/jumpRecoil" android:text="Disable Jump Recoil"
+        android:textColor="#FFFFFF" android:buttonTint="#39FF14"
+        android:checked="true"/>
+    <CheckBox android:id="@+id/oneShot" android:text="One shot kill"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"/>
+    <CheckBox android:id="@+id/fastPlant" android:text="Fast Plant"
+        android:textColor="#39FF14" android:buttonTint="#39FF14"/>
+
+    <Button android:id="@+id/btnStart" android:text="START"
+        android:textColor="#0A0A0A" android:backgroundTint="#39FF14"
+        android:layout_marginTop="32dp" android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
