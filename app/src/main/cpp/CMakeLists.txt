@@ -12,4 +12,12 @@ add_library(astral SHARED
     rage.cpp)
 
 find_library(log-lib log)
-target_link_libraries(astral ${log-lib} android)
+find_library(glesv2-lib GLESv2)
+find_library(egl-lib EGL)
+find_library(android-lib android)
+
+target_link_libraries(astral
+    ${log-lib}
+    ${glesv2-lib}
+    ${egl-lib}
+    ${android-lib})
