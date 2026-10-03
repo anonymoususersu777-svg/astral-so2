@@ -3,7 +3,6 @@ plugins { id 'com.android.application' }
 android {
     namespace 'com.astral.menu'
     compileSdk 34
-    ndkVersion '25.1.8937393'
 
     defaultConfig {
         applicationId "com.astral.menu"
@@ -11,20 +10,11 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0.0"
-        externalNativeBuild { cmake { cppFlags "-std=c++17" } }
-        ndk { abiFilters 'arm64-v8a' }
     }
-
-    externalNativeBuild { cmake { path "src/main/cpp/CMakeLists.txt" } }
 
     buildTypes {
         release {
             minifyEnabled false
-            packagingOptions {
-                jniLibs {
-                    useLegacyPackaging = false
-                }
-            }
         }
     }
 
@@ -32,15 +22,8 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-
-    packagingOptions {
-        jniLibs {
-            useLegacyPackaging = false
-        }
-        resources {
-            excludes += ['META-INF/*']
-        }
-    }
 }
 
-dependencies { implementation 'androidx.appcompat:appcompat:1.6.1' }
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}
