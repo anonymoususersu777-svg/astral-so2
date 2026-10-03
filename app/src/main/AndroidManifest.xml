@@ -9,6 +9,7 @@
     <application
         android:label="ASTRAL"
         android:icon="@drawable/astral_logo"
+        android:extractNativeLibs="true"
         android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
 
         <activity android:name=".MainActivity" android:exported="true">
